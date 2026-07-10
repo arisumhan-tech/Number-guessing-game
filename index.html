@@ -1,0 +1,76 @@
+<head>
+    <title>GAME</title>
+    <link rel="icon" href="image copy.png">
+</head>
+<center>
+<body class="screen">
+    <div class="container">
+<h1>Guess the number!</h1>
+<input id="guessnumber" placeholder="Enter the guess number">
+<button class="one" onclick="check()">Check</button>
+<p id="result">You are wrong /right</p>
+<p id="score">score:10</p>
+    </div>
+</body>
+<script>
+    //select input tag
+    //select praragrapgh tag
+    //select p tag
+    var guessnumber=document.getElementById("guessnumber") 
+    var result=document.getElementById("result")
+    var score=document.getElementById("score")
+    var totalscore=10
+    var random=Math.floor(Math.random()*10)+1
+    function check()
+    {
+        var enternumber=guessnumber.value
+        if(enternumber==random){
+            result.textContent="Right"
+            alert(" You Won")
+        }
+        else{
+            totalscore=totalscore-1
+            score.textContent="score:"+totalscore
+            result.textContent="Wroung"
+
+        }
+    }
+</script>
+<style>
+    .one{
+        background-color:rgb(165, 162, 157);
+        border-radius: 10px;
+    }
+    .container{
+        background-color: rgb(73, 195, 228);
+        padding: 20px;
+        height: 170px;
+        width: 500px;
+        border-radius: 20px;
+        border-color: rgb(53, 15, 15);
+        border-style: dashed;
+        border-width: 10px;
+        margin-top: 30px;
+    }
+    #guessnumber{
+        border-radius: 5px;
+        border-width: 4px;
+        border-color: rgb(18, 18, 18);
+        background-color: rgb(233, 236, 239);
+    }
+    div:hover{
+        background-color: rgb(18, 185, 232);
+    }
+    body:hover{
+        background-color: rgb(180, 224, 223);
+    }
+</style>
+</center>
+<hr>
+<h3>NOTE:</h3>
+<ul>
+    
+    <li>System generate one nember from 1-10</li>
+    <li>Enter your guessnumber number from 1-10</li>
+    <li>If suppose  your guessnumber and generate numbers are equal u get a score!</li>
+</ul>
